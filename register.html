@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102A23">
+<title>Register | MilesNation</title>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f7f4;
+    color: #18372c;
+    min-height: 100vh;
+}
+
+header {
+    background: #102A23;
+    color: white;
+    padding: 22px 8%;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #a8dfb5;
+}
+
+.container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #687b71;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.section-title {
+    font-size: 19px;
+    margin: 28px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2ebe5;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+}
+
+.field {
+    margin-bottom: 17px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d7e2da;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+    background: white;
+}
+
+input:focus, select:focus {
+    border-color: #26965b;
+    box-shadow: 0 0 0 3px rgba(38,150,91,0.1);
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+.activities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.activity-option {
+    border: 2px solid #dce8df;
+    padding: 18px 10px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.activity-option input {
+    display: none;
+}
+
+.activity-option strong {
+    display: block;
+    margin-top: 8px;
+}
+
+.activity-option.selected {
+    border-color: #26965b;
+    background: #edf8f0;
+    color: #176b3d;
+}
+
+.price-box {
+    background: #edf7ef;
+    padding: 22px;
+    margin-top: 28px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 27px;
+    font-weight: bold;
+    color: #167443;
+}
+
+button {
+    width: 100%;
+    background: #167443;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 22px;
+}
+
+button:hover {
+    background: #105b34;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#message {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    color: #718078;
+    padding: 25px;
+    font-size: 13px;
+}
+
+
+.distance-section {
+    display: none;
+    margin-top: 26px;
+}
+
+.distance-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.distance-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 62px;
+    padding: 14px 10px;
+    border: 2px solid #dce8df;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.distance-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
+}
+
+.distance-option.selected {
+    border-color: #26965b;
+    background: #edf8f0;
+    color: #176b3d;
+}
+
+.distance-option:focus-within {
+    outline: 3px solid rgba(38, 150, 91, 0.2);
+    outline-offset: 2px;
+}
+
+@media(max-width: 600px) {
+    .container {
+        margin: 15px auto;
+        padding: 12px;
+    }
+
+    .card {
+        padding: 22px 17px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .activities {
+        grid-template-columns: 1fr;
+    }
+
+    .distance-options {
+        grid-template-columns: 1fr;
+    }
+
+    .price-box {
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MILES<span>NATION</span></div>
+</header>
+
+<main class="container">
+<div class="card">
+
+    <h1>Join the Challenge</h1>
+
+    <p class="subtitle">
+        Complete your favourite fitness challenge from anywhere.
+        Register today and earn your finisher medal and digital certificate!
+    </p>
+
+    <form id="registrationForm">
+
+        <h2 class="section-title">Personal Details</h2>
+
+        <div class="grid">
+
+            <div class="field">
+                <label for="first_name">First Name *</label>
+                <input id="first_name" name="first_name"
+                       type="text" maxlength="80" required>
+            </div>
+
+            <div class="field">
+                <label for="last_name">Last Name *</label>
+                <input id="last_name" name="last_name"
+                       type="text" maxlength="80" required>
+            </div>
+
+            <div class="field">
+                <label for="email">Email Address *</label>
+                <input id="email" name="email"
+                       type="email" maxlength="254" required>
+            </div>
+
+            <div class="field">
+                <label for="phone">Mobile Number *</label>
+                <input id="phone" name="phone"
+                       type="tel" inputmode="numeric"
+                       pattern="[6-9][0-9]{9}"
+                       maxlength="10" required
+                       placeholder="10-digit mobile number">
+            </div>
+
+        </div>
+
+        <h2 class="section-title">Delivery Address</h2>
+
+        <div class="grid">
+
+            <div class="field">
+                <label for="house_number">House / Flat Number *</label>
+                <input id="house_number" name="house_number"
+                       type="text" maxlength="100" required>
+            </div>
+
+            <div class="field">
+                <label for="street">Street / Area *</label>
+                <input id="street" name="street"
+                       type="text" maxlength="150" required>
+            </div>
+
+            <div class="field">
+                <label for="city">City *</label>
+                <input id="city" name="city"
+                       type="text" maxlength="100" required>
+            </div>
+
+            <div class="field">
+                <label for="state">State *</label>
+                <input id="state" name="state"
+                       type="text" maxlength="100" required>
+            </div>
+
+            <div class="field full">
+                <label for="pincode">PIN Code *</label>
+                <input id="pincode" name="pincode"
+                       type="text" inputmode="numeric"
+                       pattern="[0-9]{6}" maxlength="6"
+                       required>
+            </div>
+
+        </div>
+
+        <h2 class="section-title">Choose Your Challenge</h2>
+
+        <div class="activities">
+
+            <label class="activity-option" data-activity="Running">
+                <input type="radio" name="activity"
+                       value="Running" required>
+                <span style="font-size:30px">🏃</span>
+                <strong>Running</strong>
+            </label>
+
+            <label class="activity-option" data-activity="Cycling">
+                <input type="radio" name="activity"
+                       value="Cycling">
+                <span style="font-size:30px">🚴</span>
+                <strong>Cycling</strong>
+            </label>
+
+            <label class="activity-option" data-activity="Walking">
+                <input type="radio" name="activity"
+                       value="Walking">
+                <span style="font-size:30px">🚶</span>
+                <strong>Walking</strong>
+            </label>
+
+        </div>
+
+        <div class="distance-section" id="distanceSection">
+            <h2 class="section-title">Choose Your Distance</h2>
+            <div class="distance-options" id="distanceOptions"></div>
+        </div>
+
+        <div class="price-box">
+            <div>
+                <strong>Registration Package</strong>
+                <p style="font-size:13px;margin-top:5px">
+                    Digital Certificate + Finisher Medal
+                </p>
+            </div>
+
+            <div class="price">₹299</div>
+        </div>
+
+        <button type="submit" id="payButton">
+            Register & Pay ₹299
+        </button>
+
+        <div id="message" role="status" aria-live="polite"></div>
+
+    </form>
+</div>
+</main>
+
+<footer>
+    © 2026 MilesNation. All rights reserved.
+</footer>
+
+<script>
+const form = document.getElementById("registrationForm");
+const payButton = document.getElementById("payButton");
+const message = document.getElementById("message");
+
+const activityOptions = document.querySelectorAll(".activity-option");
+
+// Activity and distance selection
+const distanceSection = document.getElementById("distanceSection");
+const distanceOptions = document.getElementById("distanceOptions");
+
+const distanceMap = {
+    Running: ["5 KM", "10 KM", "21 KM"],
+    Cycling: ["10 KM", "25 KM", "50 KM"],
+    Walking: ["2 KM", "3 KM", "5 KM"]
+};
+
+function updateActivity(activity) {
+    // Highlight the selected activity card.
+    activityOptions.forEach(option => {
+        option.classList.toggle(
+            "selected",
+            option.dataset.activity === activity
+        );
+    });
+
+    // Clear the previous distance whenever activity changes.
+    distanceOptions.innerHTML = "";
+
+    const distances = distanceMap[activity];
+
+    if (!distances) {
+        distanceSection.style.display = "none";
+        return;
+    }
+
+    distanceSection.style.display = "block";
+
+    distances.forEach(distance => {
+        const label = document.createElement("label");
+        label.className = "distance-option";
+
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "distance";
+        radio.value = distance;
+        radio.required = true;
+
+        const text = document.createElement("span");
+        text.textContent = distance;
+
+        radio.addEventListener("change", () => {
+            document.querySelectorAll(".distance-option").forEach(item => {
+                item.classList.remove("selected");
+            });
+
+            label.classList.add("selected");
+        });
+
+        label.appendChild(radio);
+        label.appendChild(text);
+        distanceOptions.appendChild(label);
+    });
+}
+
+// Update the distance choices whenever an activity is selected.
+activityOptions.forEach(option => {
+    const radio = option.querySelector('input[name="activity"]');
+
+    radio.addEventListener("change", () => {
+        updateActivity(radio.value);
+    });
+});
+
+// Preselect activity when the visitor arrives from a homepage challenge card.
+const params = new URLSearchParams(window.location.search);
+const requestedActivity = params.get("activity");
+
+if (Object.prototype.hasOwnProperty.call(distanceMap, requestedActivity)) {
+    const radio = document.querySelector(
+        `input[name="activity"][value="${requestedActivity}"]`
+    );
+
+    if (radio) {
+        radio.checked = true;
+        updateActivity(requestedActivity);
+    }
+}
+
+function showMessage(text, color = "#b42318") {
+    message.style.color = color;
+    message.textContent = text;
+}
+
+async function postJSON(url, data) {
+    const response = await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+        throw new Error(result.message || "Something went wrong.");
+    }
+
+    return result;
+}
+
+form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    if (typeof Razorpay === "undefined") {
+        showMessage("Payment service could not load. Please refresh and try again.");
+        return;
+    }
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    payButton.disabled = true;
+    payButton.textContent = "Preparing your registration...";
+    showMessage("Saving your registration...", "#167443");
+
+    try {
+        // Step 1: Save registration
+        const registration = await postJSON(
+            "/api/register",
+            data
+        );
+
+        const registrationCode = registration.registration_code;
+
+        if (!registrationCode) {
+            throw new Error("Registration code was not returned.");
+        }
+
+        // Step 2: Create Razorpay order
+        showMessage("Preparing secure payment...", "#167443");
+
+        const order = await postJSON(
+            "/api/create-order",
+            {
+                registration_code: registrationCode
+            }
+        );
+
+        if (
+            !order.order_id ||
+            !order.key_id ||
+            order.amount !== 29900 ||
+            order.currency !== "INR"
+        ) {
+            throw new Error("Invalid payment order details.");
+        }
+
+        // Step 3: Open Razorpay Checkout
+        const options = {
+            key: order.key_id,
+            amount: order.amount,
+            currency: order.currency,
+            name: "MilesNation",
+            description: `${data.activity} - ${data.distance} Challenge Registration`,
+            order_id: order.order_id,
+
+            prefill: {
+                name: `${data.first_name} ${data.last_name}`,
+                email: data.email,
+                contact: data.phone
+            },
+
+            notes: {
+                registration_code: registrationCode,
+                activity: data.activity,
+                distance: data.distance
+            },
+
+            theme: {
+                color: "#167443"
+            },
+
+            handler: async function(paymentResponse) {
+                try {
+                    showMessage("Verifying your payment...", "#167443");
+
+                    // Step 4: Verify payment on backend
+                    await postJSON(
+                        "/api/verify-payment",
+                        {
+                            registration_code: registrationCode,
+                            razorpay_order_id: paymentResponse.razorpay_order_id,
+                            razorpay_payment_id: paymentResponse.razorpay_payment_id,
+                            razorpay_signature: paymentResponse.razorpay_signature
+                        }
+                    );
+
+                    window.location.href =
+                        "success.html?registration_code=" +
+                        encodeURIComponent(registrationCode);
+
+                } catch (error) {
+                    showMessage(
+                        error.message +
+                        " Please contact MilesNation support before trying another payment."
+                    );
+
+                    payButton.disabled = false;
+                    payButton.textContent = "Retry Payment";
+                }
+            },
+
+            modal: {
+                ondismiss: function() {
+                    showMessage(
+                        "Payment window closed. Your registration is saved as pending. You can try again.",
+                        "#9a6700"
+                    );
+
+                    payButton.disabled = false;
+                    payButton.textContent = "Retry Payment";
+                }
+            }
+        };
+
+        const checkout = new Razorpay(options);
+
+        checkout.on("payment.failed", function(response) {
+            showMessage(
+                response.error?.description ||
+                "Payment failed. Please try again."
+            );
+
+            payButton.disabled = false;
+            payButton.textContent = "Retry Payment";
+        });
+
+        checkout.open();
+
+    } catch (error) {
+        console.error(error);
+
+        showMessage(error.message);
+
+        payButton.disabled = false;
+        payButton.textContent = "Register & Pay ₹299";
+    }
+});
+</script>
+
+</body>
+</html>
