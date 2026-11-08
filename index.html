@@ -28,6 +28,129 @@
 @media(max-width:850px){.container{width:min(100% - 40px,680px)}.hero-grid{grid-template-columns:1fr .9fr;gap:28px}.hero h1{font-size:clamp(43px,6vw,60px)}.movement-gallery{grid-template-columns:1fr 1fr}.movement-card-large{grid-row:span 2;min-height:420px}.movement-card{min-height:200px}.challenge-card{padding:22px 17px}.challenge-photo{height:160px}.challenge-title{font-size:32px}}
 @media(max-width:600px){.container{width:calc(100% - 36px)}.section{padding:66px 0}.nav-wrap{min-height:68px}.wordmark{font-size:23px}.menu-toggle{display:block}.desktop-nav{position:absolute;top:100%;right:0;left:0;display:none;flex-direction:column;gap:0;padding:8px 20px 18px;background:#102a23;border-bottom:1px solid #d7f36b44}.desktop-nav.open{display:flex}.desktop-nav a{min-height:48px;border-bottom:1px solid #d7f36b22}.header-register{display:none}.hero{padding:48px 0 52px}.hero-grid{grid-template-columns:1fr;gap:28px}.hero h1{font-size:clamp(43px,11vw,59px)}.hero-subhead{font-size:14px}.hero-visual{min-height:350px}.hero-actions .btn{width:100%}.trust-group{gap:17px;padding-inline:18px;font-size:10px}.movement-section{padding:66px 0}.movement-intro{grid-template-columns:1fr;margin-bottom:24px}.movement-intro h2{font-size:39px}.movement-gallery{grid-template-columns:1fr 1fr;gap:10px}.movement-card-large{grid-column:1/-1;grid-row:auto;min-height:260px}.movement-card{min-height:185px;border-radius:16px}.movement-card-copy{right:13px;bottom:14px;left:13px}.movement-card-copy h3{font-size:19px}.steps-grid,.challenge-grid,.details-grid{grid-template-columns:1fr}.steps-grid{gap:22px}.challenge-card{padding:23px;border-radius:19px}.challenge-photo{height:220px}.challenge-title{font-size:40px}.new-price{font-size:34px}.section-heading h2{font-size:36px}#faq .faq-list{grid-template-columns:1fr}.final-cta{padding:68px 0}.final-cta .btn{width:100%;max-width:320px}.site-footer{padding-bottom:110px}.footer-top{flex-direction:column;gap:20px}.footer-contact{flex-direction:column;gap:0}.footer-bottom{align-items:flex-start;flex-direction:column}.whatsapp-float{right:16px;bottom:88px;width:48px;height:48px}.sticky-register{padding:12px 18px max(10px,env(safe-area-inset-bottom))}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.trust-track{animation:none}.reveal{opacity:1;transform:none;transition:none}.movement-card img,.btn,.challenge-card{transition:none}}
+/* ===== MILESNATION MEDAL SHOWCASE ===== */
+
+.medal-feature {
+    padding: 90px 0;
+    background: linear-gradient(135deg, #0b211b, #193a30, #102a23);
+    border-top: 1px solid rgba(215,243,107,.22);
+    overflow: hidden;
+}
+
+.medal-feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.medal-feature-art {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid rgba(215,243,107,.32);
+    border-radius: 26px;
+    background: rgba(255,255,255,.04);
+}
+
+.medal-feature-art img {
+    width: 100%;
+    max-width: 470px;
+    max-height: 720px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 14px;
+    filter: drop-shadow(0 22px 28px rgba(0,0,0,.5));
+    transition: transform .5s ease;
+}
+
+.medal-feature-art:hover img {
+    transform: translateY(-6px) scale(1.015);
+}
+
+.medal-feature-copy h2 {
+    margin: 15px 0 22px;
+    font-size: clamp(40px, 5vw, 66px);
+    line-height: .98;
+}
+
+.medal-feature-copy h2 em {
+    color: var(--lime);
+    font-style: normal;
+}
+
+.medal-feature-copy > p {
+    color: #d1ddd1;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.medal-feature-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 25px 0;
+}
+
+.medal-feature-tags span {
+    padding: 8px 12px;
+    border: 1px solid rgba(215,243,107,.36);
+    border-radius: 999px;
+    color: #e9efdf;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.medal-feature-offer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 11px;
+    margin: 27px 0 19px;
+}
+
+.medal-feature-old-price {
+    color: #a9b9a8;
+    font-size: 21px;
+    text-decoration: line-through;
+}
+
+.medal-feature-new-price {
+    color: var(--lime);
+    font-size: 39px;
+    font-weight: 950;
+}
+
+.medal-feature-limited {
+    padding: 6px 10px;
+    border: 1px solid #d7f36b70;
+    border-radius: 999px;
+    color: var(--lime);
+    font-size: 9px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.medal-feature-register {
+    min-width: 190px;
+}
+
+@media(max-width:760px) {
+    .medal-feature-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .medal-feature-art img {
+        max-width: 360px;
+    }
+
+    .medal-feature-copy h2 {
+        font-size: 42px;
+    }
+}
 </style>
 </head>
 <body>
@@ -68,6 +191,54 @@
 <article class="challenge-card reveal"><div class="challenge-photo"><img src="https://images.unsplash.com/photo-1572988582484-fd425b387770?auto=format&fit=crop&w=1400&q=88" alt="Walking challenge" loading="lazy"></div><span class="popular-label" hidden>Most popular</span><p class="challenge-name">Walking</p><h3 class="challenge-title">Walking challenge</h3><div class="limited-offer"><span class="old-price">₹349</span><strong class="new-price">₹299</strong><span class="limited-tag">Limited slots</span></div><p class="offer-caption">Digital certificate + finisher medal</p><p class="activity-description">For anyone who wants to stay active, enjoy the journey, and make every step count.</p><div class="challenge-divider"></div><p class="price-note">One special launch price. All included.</p><a class="btn challenge-register" href="register.html?activity=Walking" target="_blank" rel="noopener noreferrer">Register for walking ↗</a></article>
 </div><p class="tax-note">All prices are in Indian Rupees (₹). Digital certificate and finisher medal included in the limited-slot offer.</p>
 </div></section>
+<!-- MILESNATION MEDAL SHOWCASE -->
+<section class="medal-feature" id="our-medal">
+
+    <div class="container medal-feature-grid">
+
+        <div class="medal-feature-art reveal">
+            <img
+                src="assets/medal-closeup.png"
+                alt="MilesNation Army Day Finisher Medal"
+                loading="lazy">
+        </div>
+
+        <div class="medal-feature-copy reveal">
+
+            <p class="eyebrow">THE FINISH DESERVES A REWARD</p>
+
+            <h2>
+                EARN THE MILES.
+                <br>
+                <em>WEAR THE PRIDE.</em>
+            </h2>
+
+            <p>
+                Complete your MilesNation challenge and celebrate
+                your effort with the exclusive Army Day finisher medal.
+            </p>
+
+            <div class="medal-feature-tags">
+                <span>Finisher Medal</span>
+                <span>Digital Certificate</span>
+                <span>Run · Walk · Ride</span>
+            </div>
+
+            <div class="medal-feature-offer">
+                <span class="medal-feature-old-price">₹349</span>
+                <strong class="medal-feature-new-price">₹299</strong>
+                <span class="medal-feature-limited">Limited Offer</span>
+            </div>
+
+            <a href="register.html" class="btn medal-feature-register">
+               REGISTER NOW ↗
+            </a>
+
+        </div>
+
+</div>
+
+</section>
 <section class="section" id="verification"><div class="container"><div class="section-heading reveal"><p class="eyebrow">From finish to doorstep</p><h2>Your effort, recognised.</h2><p>Clear submission guidelines and delivery details help you know what happens after your finish.</p></div><div class="details-grid">
 <article class="detail-column reveal"><div class="detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3L19 6V11C19 16 15.5 19.5 12 21C8.5 19.5 5 16 5 11V6L12 3Z"/><path d="M8.5 12L11 14.5L15.5 9.5"/></svg></div><h3>How we verify</h3><p>Submit a screenshot or activity record from a running, walking, or cycling app, or a GPS-enabled fitness tracker, showing your completed activity details. Follow the challenge-specific submission instructions.</p><p>Our team reviews submissions within the stated verification period. If any details need clarification, we will contact you using your registration details.</p></article>
 <article class="detail-column reveal"><div class="detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M3 11H21M12 11V21M7 4L12 7L17 4"/></svg></div><h3>How your medal arrives</h3><p>Your finisher medal is included in the limited-slot offer. Provide a complete delivery address and contact details during registration.</p><p>After your activity is approved, your medal will be shipped to your registered address. Delivery time can vary by destination.</p></article>
