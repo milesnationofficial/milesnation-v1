@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us & Policies | MilesNation</title>
+
+    <meta name="description" content="Learn about MilesNation, our contact details, terms and conditions, refund policy, privacy policy and medal delivery information.">
+
+    <style>
+        :root {
+            --bg: #07130e;
+            --card: #10251a;
+            --green: #c5f36a;
+            --white: #f5f8f3;
+            --muted: #a7b5aa;
+            --border: rgba(255,255,255,0.09);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--white);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.8;
+        }
+
+        a {
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(7,19,14,0.96);
+            border-bottom: 1px solid var(--border);
+            padding: 17px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            color: var(--green);
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .back-link {
+            color: white;
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            padding: 8px 18px;
+            font-size: 13px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 55px;
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    rgba(117,174,66,0.17),
+                    transparent 65%
+                );
+        }
+
+        .eyebrow {
+            color: var(--green);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 65px);
+            line-height: 1.15;
+            margin: 18px 0;
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: auto;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 90%;
+            margin: auto;
+            padding-bottom: 80px;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0 55px;
+        }
+
+        .quick-links a {
+            color: var(--white);
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 9px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .quick-links a:hover {
+            color: var(--green);
+            border-color: var(--green);
+        }
+
+        .policy-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 35px;
+            margin-bottom: 22px;
+            scroll-margin-top: 100px;
+        }
+
+        .section-number {
+            color: var(--green);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 27px;
+            margin: 8px 0 18px;
+        }
+
+        h3 {
+            color: var(--green);
+            font-size: 16px;
+            margin: 22px 0 8px;
+        }
+
+        p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            padding-left: 22px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: rgba(197,243,106,0.08);
+            border-left: 3px solid var(--green);
+            padding: 18px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .highlight p {
+            margin: 0;
+            color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-box {
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.025);
+        }
+
+        .contact-box span {
+            display: block;
+            color: var(--green);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .contact-box strong {
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .address-box {
+            grid-column: 1 / -1;
+        }
+
+        .policy-date {
+            color: #829287;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background: #040b07;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer strong {
+            color: var(--green);
+            font-size: 23px;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin: 18px 0;
+            font-size: 12px;
+        }
+
+        @media(max-width:650px) {
+            header {
+                padding: 14px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .hero {
+                padding: 55px 18px 40px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .policy-section {
+                padding: 23px 19px;
+            }
+
+            h2 {
+                font-size: 23px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .address-box {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">MILESNATION.</a>
+    <a href="index.html" class="back-link">← Back to Home</a>
+</header>
+
+<section class="hero">
+    <div class="eyebrow">Our Story · Our Commitment</div>
+
+    <h1>MORE THAN<br><span>JUST MILES.</span></h1>
+
+    <p>
+        Welcome to MilesNation. Discover who we are, how we operate,
+        and the policies that help us provide a transparent and
+        enjoyable virtual fitness challenge experience.
+    </p>
+</section>
+
+<main class="container">
+
+    <nav class="quick-links">
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#terms">Terms & Conditions</a>
+        <a href="#refund">Refund Policy</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#delivery">Medal Delivery</a>
+    </nav>
+
+    <!-- 01 ABOUT US -->
+
+    <section class="policy-section" id="about">
+
+        <div class="section-number">01 / WHO WE ARE</div>
+
+        <h2>About Us</h2>
+
+        <p>
+            MilesNation is a virtual fitness challenge platform
+            created to encourage people to stay active, healthy
+            and motivated through physical activities.
+        </p>
+
+        <p>
+            We believe that fitness is not limited by location,
+            age or competition. Everyone should have an opportunity
+            to challenge themselves, achieve personal goals and
+            celebrate their progress.
+        </p>
+
+        <h3>What We Offer</h3>
+
+        <ul>
+            <li>Virtual running challenges.</li>
+            <li>Virtual walking challenges.</li>
+            <li>Virtual cycling challenges.</li>
+            <li>Finisher medals for eligible participants.</li>
+            <li>Digital certificates of achievement.</li>
+        </ul>
+
+        <h3>Our Mission</h3>
+
+        <p>
+            Our mission is to make fitness accessible, enjoyable
+            and motivating by bringing people together through
+            virtual fitness challenges.
+        </p>
+
+        <div class="highlight">
+            <p>
+                Every mile matters. Every effort counts.
+                Your fitness journey deserves recognition.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- 02 CONTACT US -->
+
+    <section class="policy-section" id="contact">
+
+        <div class="section-number">02 / GET IN TOUCH</div>
+
+        <h2>Contact Us</h2>
+
+        <p>
+            Have questions about registrations, payments,
+            participation, medals or certificates?
+            Our support team is here to help.
+        </p>
+
+        <div class="contact-grid">
+
+            <div class="contact-box">
+                <span>ORGANISATION</span>
+                <strong>MilesNation</strong>
+            </div>
+
+            <div class="contact-box">
+                <span>EMAIL SUPPORT</span>
+                <strong>
+                    <a href="mailto:milesnationofficial@gmail.com">
+                        milesnationofficial@gmail.com
+                    </a>
+                </strong>
+            </div>
+
+            <div class="contact-box">
+                <span>CONTACT NUMBER 1</span>
+                <strong>
+                    <a href="tel:9346488764">9346488764</a>
+                </strong>
+            </div>
+
+            <div class="contact-box">
+                <span>CONTACT NUMBER 2</span>
+                <strong>
+                    <a href="tel:7842688442">7842688442</a>
+                </strong>
+            </div>
+
+            <div class="contact-box address-box">
+                <span>OFFICIAL CORRESPONDENCE ADDRESS</span>
+
+                <strong>
+                    Sri Sai Srinivasa Towers, Flat No. 504,<br>
+                    Vasavi Enclave, Opposite True Value,<br>
+                    Near Pallavi Progress High School,<br>
+                    Hyderabad, Telangana – 500010, India.
+                </strong>
+            </div>
+
+        </div>
+
+        <p style="margin-top:20px;">
+            For support, please include your registered name,
+            email address and registration details where applicable.
+        </p>
+
+    </section>
+
+    <!-- 03 TERMS AND CONDITIONS -->
+
+    <section class="policy-section" id="terms">
+
+        <div class="section-number">03 / PARTICIPATION RULES</div>
+
+        <h2>Terms & Conditions</h2>
+
+        <p>
+            By registering for a MilesNation challenge, participants
+            agree to the following terms and conditions.
+        </p>
+
+        <h3>1. Registration</h3>
+
+        <ul>
+            <li>Participants must provide accurate registration information.</li>
+            <li>Participants must select the correct activity and distance category.</li>
+            <li>Registration is considered successful after payment confirmation.</li>
+            <li>Registration details should be reviewed before submission.</li>
+        </ul>
+
+        <h3>2. Participation</h3>
+
+        <ul>
+            <li>Participants are responsible for completing their selected challenge.</li>
+            <li>Participants should follow safe practices during physical activities.</li>
+            <li>Participants must not submit false or misleading activity records.</li>
+            <li>Participants should follow the event-specific instructions published by MilesNation.</li>
+        </ul>
+
+        <h3>3. Health and Safety</h3>
+
+        <p>
+            Participants are responsible for assessing their physical
+            fitness before taking part. Consult a qualified medical
+            professional if you have concerns about your ability to
+            participate.
+        </p>
+
+        <p>
+            MilesNation is not a substitute for medical advice,
+            supervision or emergency services.
+        </p>
+
+        <h3>4. Medals and Certificates</h3>
+
+        <p>
+            Finisher medals and digital certificates are subject
+            to the applicable event rules and successful completion
+            requirements.
+        </p>
+
+        <h3>5. Event Changes</h3>
+
+        <p>
+            MilesNation reserves the right to modify event schedules,
+            instructions or arrangements when reasonably necessary.
+            Participants will be informed of significant changes
+            through available communication channels.
+        </p>
+
+        <h3>6. Acceptance</h3>
+
+        <p>
+            Completing registration indicates that the participant
+            has read and agreed to these terms and the applicable
+            event instructions.
+        </p>
+
+    </section>
+
+    <!-- 04 REFUND POLICY -->
+
+    <section class="policy-section" id="refund">
+
+        <div class="section-number">04 / PAYMENT POLICY</div>
+
+        <h2>Refund & Cancellation Policy</h2>
+
+        <div class="highlight">
+            <p>
+                <strong>Important:</strong> MilesNation registration
+                fees are non-refundable once registration is successfully
+                completed, except for the payment-related exceptions
+                described below.
+            </p>
+        </div>
+
+        <h3>1. Non-Refundable Registrations</h3>
+
+        <p>
+            Once a participant successfully registers for an event,
+            the registration fee is non-refundable.
+        </p>
+
+        <p>
+            Personal reasons, changes in plans, inability to participate
+            or failure to complete the challenge do not qualify for a refund.
+        </p>
+
+        <h3>2. Duplicate Payments</h3>
+
+        <p>
+            If a participant is charged more than once for the same
+            registration, the duplicate payment can be reported to
+            MilesNation for verification and resolution.
+        </p>
+
+        <h3>3. Failed Transactions</h3>
+
+        <p>
+            If a payment fails but money is deducted from the
+            participant's account, the participant should contact
+            MilesNation with the transaction reference and payment proof.
+            Verified cases will be handled through the payment provider's
+            applicable reversal or refund process.
+        </p>
+
+        <h3>4. Event Cancellation by MilesNation</h3>
+
+        <p>
+            If MilesNation cancels an event, affected participants
+            will be informed about the available resolution.
+            Where a refund is applicable, it will be processed
+            through the original payment method, subject to verification.
+        </p>
+
+        <h3>5. How to Request Payment Assistance</h3>
+
+        <p>
+            Email milesnationofficial@gmail.com with your registered
+            email address, payment reference and relevant screenshots.
+        </p>
+
+        <p>
+            Verified payment issues will be reviewed and handled
+            according to the applicable payment provider process.
+        </p>
+
+    </section>
+
+    <!-- 05 PRIVACY POLICY -->
+
+    <section class="policy-section" id="privacy">
+
+        <div class="section-number">05 / YOUR INFORMATION</div>
+
+        <h2>Privacy Policy</h2>
+
+        <p>
+            MilesNation respects the privacy of its participants.
+            This policy explains the information we collect and
+            how it is used.
+        </p>
+
+        <h3>1. Information We Collect</h3>
+
+        <ul>
+            <li>First name and last name.</li>
+            <li>Email address and contact number, where collected.</li>
+            <li>Postal and delivery address.</li>
+            <li>Selected activity and challenge category.</li>
+            <li>Registration and payment transaction references.</li>
+        </ul>
+
+        <h3>2. How We Use Your Information</h3>
+
+        <ul>
+            <li>To process registrations and confirm participation.</li>
+            <li>To communicate event updates and important information.</li>
+            <li>To arrange medal and certificate delivery.</li>
+            <li>To respond to customer support requests.</li>
+            <li>To maintain registration and transaction records.</li>
+        </ul>
+
+        <h3>3. Payment Information</h3>
+
+        <p>
+            Online payments are processed through the payment
+            service provider. MilesNation does not intend to collect
+            or store participants' complete card numbers, UPI PINs
+            or banking passwords.
+        </p>
+
+        <h3>4. Sharing of Information</h3>
+
+        <p>
+            Information may be shared with payment providers,
+            delivery partners and service providers when necessary
+            to operate the event, process payments or deliver medals.
+        </p>
+
+        <p>
+            Information may also be disclosed when required by
+            applicable law or a lawful request from an authority.
+        </p>
+
+        <h3>5. Data Security</h3>
+
+        <p>
+            We take reasonable steps to protect participant
+            information against unauthorised access, alteration
+            or disclosure. However, no online system can guarantee
+            absolute security.
+        </p>
+
+        <h3>6. Data Requests</h3>
+
+        <p>
+            Participants can contact us to request access to,
+            correction of or deletion of their personal information,
+            subject to applicable legal and record-retention requirements.
+        </p>
+
+        <h3>7. Contact</h3>
+
+        <p>
+            For privacy-related questions, contact
+            milesnationofficial@gmail.com.
+        </p>
+
+    </section>
+
+    <!-- 06 MEDAL DELIVERY POLICY -->
+
+    <section class="policy-section" id="delivery">
+
+        <div class="section-number">06 / YOUR FINISHER REWARD</div>
+
+        <h2>Medal Dispatch & Delivery Policy</h2>
+
+        <p>
+            MilesNation aims to deliver finisher medals to eligible
+            participants after the completion of the event.
+        </p>
+
+        <div class="highlight">
+            <p>
+                <strong>Dispatch:</strong> Within 1–2 working days
+                after the event concludes.
+                <br><br>
+                <strong>Delivery:</strong> Within 8–10 days
+                after dispatch, subject to courier service and location.
+            </p>
+        </div>
+
+        <h3>1. Dispatch Timeline</h3>
+
+        <p>
+            Eligible finisher medals will be handed over to the
+            delivery partner within 1–2 working days after the
+            event concludes.
+        </p>
+
+        <h3>2. Delivery Timeline</h3>
+
+        <p>
+            Delivery is expected within 8–10 days after dispatch.
+            Actual delivery may vary depending on the participant's
+            location, courier operations and unforeseen circumstances.
+        </p>
+
+        <h3>3. Tracking Information</h3>
+
+        <p>
+            Where tracking is available, shipment details will be
+            shared with participants through their registered
+            contact information.
+        </p>
+
+        <h3>4. Incorrect Address</h3>
+
+        <p>
+            Participants are responsible for providing complete
+            and accurate delivery information during registration.
+            Delays or failed deliveries caused by incorrect or
+            incomplete addresses may require additional assistance.
+        </p>
+
+        <h3>5. Delivery Delays</h3>
+
+        <p>
+            If a medal is delayed beyond the expected timeline,
+            participants can contact MilesNation support with
+            their registration details.
+        </p>
+
+        <h3>6. Undelivered or Damaged Packages</h3>
+
+        <p>
+            Participants should report damaged, missing or
+            undelivered packages to MilesNation as soon as possible
+            so the matter can be checked with the delivery partner.
+        </p>
+
+    </section>
+
+    <p class="policy-date">
+        Policy information should be read together with the
+        specific instructions published for each MilesNation event.
+    </p>
+
+</main>
+
+<footer>
+
+    <strong>MILESNATION.</strong>
+
+    <p>Every Mile. Every Challenge. Every Achievement.</p>
+
+    <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#terms">Terms</a>
+        <a href="#refund">Refund Policy</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#delivery">Delivery</a>
+    </div>
+
+    <p>
+        © <span id="year"></span> MilesNation. All rights reserved.
+    </p>
+
+</footer>
+
+<script>
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
